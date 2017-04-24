@@ -1,15 +1,10 @@
 package com.matches.tests;
 
-import static com.tools.AppiumServer.startAppiumServer;
-import static com.tools.AppiumServer.stopAppiumServer;
-
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import com.matches.pages.SendNotificationPage;
+import com.matches.steps.MatchesSteps;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
@@ -19,24 +14,16 @@ import net.thucydides.core.annotations.Steps;
 public class MatchesTest {
 
 	@Managed(driver = "appium")
-	WebDriver driver;
+	private WebDriver driver;
 
 	@Steps
-	public SendNotificationPage iOSsteps;
+	public MatchesSteps matchesSteps;
 
-//	@BeforeClass
-//	public static void startAppium() {
-//		startAppiumServer();
-//	}
-//
-//	@AfterClass
-//	public static void stopAppium() {
-//		stopAppiumServer();
-//	}
 
 	@Test
 	public void verifySauceiOSAppTest() {
-		iOSsteps.clickAllow();
+		matchesSteps.clickNotificationAllow();
+		matchesSteps.clickSettingsSubmit();
 	}
 
 }

@@ -1,11 +1,12 @@
-package com.steps;
+package com.wiki.steps;
 
 import net.thucydides.core.annotations.Steps;
+
+import com.wiki.steps.serenity.EndUserSteps;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-
-import com.steps.serenity.EndUserSteps;
 
 public class DefinitionSteps {
 

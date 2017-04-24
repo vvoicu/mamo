@@ -1,4 +1,4 @@
-package com;
+package com.wiki;
 
 import cucumber.api.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;

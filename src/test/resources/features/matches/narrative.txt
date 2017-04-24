@@ -1,0 +1,2 @@
+In order to test matches fashion mobile app
+We will describe a scenario that will perform a journey in the mobile app
