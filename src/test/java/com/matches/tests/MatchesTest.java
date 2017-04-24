@@ -19,11 +19,15 @@ public class MatchesTest {
 	@Steps
 	public MatchesSteps matchesSteps;
 
+	private String userName = "mfautotest+3001@gmail.com";
+	private String userPass = "Testing89";
 
 	@Test
-	public void verifySauceiOSAppTest() {
+	public void matchesLoginTest() {
 		matchesSteps.clickNotificationAllow();
 		matchesSteps.clickSettingsSubmit();
+		matchesSteps.clickOnSignIn();
+		matchesSteps.performLogin(userName, userPass);
 	}
 
 }
