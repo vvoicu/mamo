@@ -26,12 +26,12 @@ public class MatchesTest {
 
 //	@BeforeClass
 //	public static void startAppium() {
-////		startAppiumServer();
+//		startAppiumServer();
 //	}
 //
 //	@AfterClass
 //	public static void stopAppium() {
-////		stopAppiumServer();
+//		stopAppiumServer();
 //	}
 
 	@Test
