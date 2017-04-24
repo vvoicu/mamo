@@ -11,47 +11,62 @@ import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.steps.ScenarioSteps;
 
-public class MatchesSteps extends ScenarioSteps{
+public class MatchesSteps extends ScenarioSteps {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	public SendNotificationPage sendNotificationPage;
 	public SettingsPage settingsPage;
 	public PreHomePage preHomePage;
 	public LoginPage loginPage;
 	public IosKeyboardPage iosKeyboard;
 	public LoginWarningPage loginWarningPage;
-	
+
 	@Step
-	public void clickNotificationAllow(){
+	public void clickNotificationAllow() {
 		sendNotificationPage.clickAllow();
 	}
-	
+
 	@Step
-	public void clickSettingsSubmit(){
+	public void clickSettingsSubmit() {
 		settingsPage.clickSubmit();
 	}
-	
+
 	@Step
-	public void clickOnSignIn(){
+	public void clickOnSignIn() {
 		preHomePage.clickSignIn();
 	}
 
 	@StepGroup
-	public void performLogin(String user,String pass){
-		loginPage.inputUserName(user);
-		loginPage.inputUserPass(pass);
+	public void performLogin(String user, String pass) {
+		inputUserName(user);
+		inputUserPass(pass);
 		iosKeyboard.closeKeyboard();
+		clickLogin();
+	}
+
+	@Step
+	public void inputUserName(String user) {
+		loginPage.inputUserName(user);
+	}
+
+	@Step
+	public void inputUserPass(String pass) {
+		loginPage.inputUserPass(pass);
+	}
+
+	@Step
+	public void clickLogin() {
 		loginPage.clickLogin();
 	}
-	
+
 	@Step
-	public String getUserNameWarning(){
+	public String getUserNameWarning() {
 		return loginWarningPage.getUserWarning();
 	}
-	
+
 	@Step
-	public String getUserPassWarning(){
+	public String getUserPassWarning() {
 		return loginWarningPage.getPasswordWarning();
 	}
 }
