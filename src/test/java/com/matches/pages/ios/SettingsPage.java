@@ -1,4 +1,4 @@
-package com.matches.pages;
+package com.matches.pages.ios;
 
 import java.util.concurrent.TimeUnit;
 

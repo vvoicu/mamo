@@ -1,11 +1,11 @@
 package com.matches.steps;
 
-import com.matches.pages.PreHomePage;
-import com.matches.pages.SendNotificationPage;
-import com.matches.pages.SettingsPage;
-import com.matches.pages.extra.IosKeyboardPage;
-import com.matches.pages.login.LoginPage;
-import com.matches.pages.login.LoginWarningPage;
+import com.matches.pages.ios.PreHomePage;
+import com.matches.pages.ios.SendNotificationPage;
+import com.matches.pages.ios.SettingsPage;
+import com.matches.pages.ios.extra.IosKeyboardPage;
+import com.matches.pages.ios.login.LoginPage;
+import com.matches.pages.ios.login.LoginWarningPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
