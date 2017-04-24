@@ -28,6 +28,12 @@ public class MatchesTest {
 		matchesSteps.clickSettingsSubmit();
 		matchesSteps.clickOnSignIn();
 		matchesSteps.performLogin(userName, userPass);
+
+		String userWarning = matchesSteps.getUserNameWarning();
+		String passWarning = matchesSteps.getUserPassWarning();
+
+		System.out.println("user warning: " + userWarning);
+		System.out.println("pass warning: " + passWarning);
 	}
 
 }

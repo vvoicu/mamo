@@ -5,6 +5,7 @@ import com.matches.pages.SendNotificationPage;
 import com.matches.pages.SettingsPage;
 import com.matches.pages.extra.IosKeyboardPage;
 import com.matches.pages.login.LoginPage;
+import com.matches.pages.login.LoginWarningPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
@@ -18,8 +19,8 @@ public class MatchesSteps extends ScenarioSteps{
 	public SettingsPage settingsPage;
 	public PreHomePage preHomePage;
 	public LoginPage loginPage;
-	
 	public IosKeyboardPage iosKeyboard;
+	public LoginWarningPage loginWarningPage;
 	
 	@Step
 	public void clickNotificationAllow(){
@@ -42,5 +43,15 @@ public class MatchesSteps extends ScenarioSteps{
 		loginPage.inputUserPass(pass);
 		iosKeyboard.closeKeyboard();
 		loginPage.clickLogin();
+	}
+	
+	@Step
+	public String getUserNameWarning(){
+		return loginWarningPage.getUserWarning();
+	}
+	
+	@Step
+	public String getUserPassWarning(){
+		return loginWarningPage.getPasswordWarning();
 	}
 }

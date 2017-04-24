@@ -10,6 +10,10 @@ import net.serenitybdd.core.pages.PageObject;
 public class SettingsPage extends PageObject {
 
 	public void clickSubmit() {
-		this.find(MobileBy.AccessibilityId("SUBMIT")).withTimeoutOf(Constants.WAIT_TIME, TimeUnit.SECONDS).click();
+		try {
+			this.find(MobileBy.AccessibilityId("SUBMIT")).withTimeoutOf(Constants.WAIT_TIME, TimeUnit.SECONDS).click();
+		} catch (Exception e) {
+			System.out.println("Site Settings were not displayed");
+		}
 	}
 }
