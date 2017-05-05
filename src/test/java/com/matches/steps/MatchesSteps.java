@@ -1,5 +1,6 @@
 package com.matches.steps;
 
+import com.matches.pages.android.DroidPrehomePage;
 import com.matches.pages.ios.PreHomePage;
 import com.matches.pages.ios.SendNotificationPage;
 import com.matches.pages.ios.SettingsPage;
@@ -15,12 +16,16 @@ public class MatchesSteps extends ScenarioSteps {
 
 	private static final long serialVersionUID = 1L;
 
+	// IOS
 	public SendNotificationPage sendNotificationPage;
 	public SettingsPage settingsPage;
 	public PreHomePage preHomePage;
 	public LoginPage loginPage;
 	public IosKeyboardPage iosKeyboard;
 	public LoginWarningPage loginWarningPage;
+
+	// ANDROID
+	public DroidPrehomePage prehomePage;
 
 	@Step
 	public void clickNotificationAllow() {
@@ -34,7 +39,13 @@ public class MatchesSteps extends ScenarioSteps {
 
 	@Step
 	public void clickOnSignIn() {
-		preHomePage.clickSignIn();
+		
+		String platform = System.getProperty("appium.platformName");
+		
+		if (platform != null && platform.contains("iOS"))
+			preHomePage.clickSignIn();
+		else
+			prehomePage.clickSignIn();
 	}
 
 	@StepGroup

@@ -11,7 +11,7 @@ import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 
 @RunWith(SerenityRunner.class)
-public class MatchesTest {
+public class MatchesIOSTest {
 
 	@Managed(driver = "appium")
 	private WebDriver driver;
@@ -24,8 +24,15 @@ public class MatchesTest {
 
 	@Test
 	public void matchesLoginTest() {
+		matchesSteps.clickNotificationAllow();
+		matchesSteps.clickSettingsSubmit();
 		matchesSteps.clickOnSignIn();
+		matchesSteps.performLogin(userName, userPass);
 
+		String userWarning = matchesSteps.getUserNameWarning();
+		// String passWarning = matchesSteps.getUserPassWarning();
+
+		System.out.println("user warning: " + userWarning);
+		// System.out.println("pass warning: " + passWarning);
 	}
-
 }
